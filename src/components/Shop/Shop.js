@@ -12,20 +12,27 @@ const Shop = () => {
         .then(data=> setproducts(data));
     },[])
 
+    /* shoping cart information store state */
+    const [cart, setCart] = useState([]);
+
     /* button event handler section */
-    const handleClick= (id)=>{
-        console.log(id);
+    const handleAddCart= (product)=>{
+        console.log(product);
+        /* set information on the state store of shoping cart */
+        const newCart = [...cart , product];
+        setCart(newCart);
     }
 
     return (
         <div className='shop-container'>
             <div className="product-container">
                {
-                   products.map(product => <Product key={products.id} handleClick={handleClick} product={product}></Product>)
+                   products.map(product => <Product key={products.id} handleAddCart={handleAddCart} product={product}></Product>)
                }
             </div>
             <div className="cart-container">
                 <h2>Order</h2>
+                <p>selected items : {cart.length}</p>
             </div>
         </div>
     );
