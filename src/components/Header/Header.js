@@ -1,6 +1,7 @@
 import './Header.css'    
 import React from 'react';
 import logo from '../../images/Logo.svg'
+import CustomLink from '../CustomLink/CustomLink';
 
 const Header = () => {
     return (
@@ -9,9 +10,9 @@ const Header = () => {
                 <img src={logo} alt="" />
             </div>
             <div className='right-container'>
-                <li>Order</li>
-                <li>Order Review</li>
-                <li>Manage Inventory</li>
+                <CustomLink to="/">Shop</CustomLink>
+                <CustomLink to="/order">Order Review</CustomLink>
+                <CustomLink to="/inventory">Manage Inventory</CustomLink>
             </div>
         </nav>
     );

@@ -57,6 +57,14 @@
     position:absolute;
     bottom: 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+.add-cart p{
+    margin-right: 8px;
+   
 }
 
 .add-cart:hover{
