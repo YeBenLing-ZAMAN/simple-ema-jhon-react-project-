@@ -1,4 +1,6 @@
 import React from 'react';
+import CustomLink from '../CustomLink/CustomLink';
+import Order from '../Order/Order';
 import './Summary.css'
 const Summary = (props) => {
     const { cart } = props;
@@ -29,7 +31,9 @@ const Summary = (props) => {
             <h3>Grand total : ${grandTotal}</h3>
             <div className='order-controll-section'>
                 <button className='clear-btn'>Clear Cart</button>
-                <button className='review-button'>Review Order</button>
+                <button className='review-button' >
+                    <CustomLink to="/order" className='inside-btn'>Order Review</CustomLink>
+                </button>
             </div>
 
         </div>

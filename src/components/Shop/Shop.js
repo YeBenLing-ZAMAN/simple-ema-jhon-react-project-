@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
+import useProducts from '../hooks/useProduct '
 import Summary from '../Summary/Summary';
 import { addToDb, getStoreCart } from '../../utilities/fakedb';
 import './Shop.css'
@@ -7,12 +8,8 @@ import './Shop.css'
 const Shop = () => {
 
     /* collect data form api and store local variable */
-    const [products, setproducts] = useState([]);
-    useEffect(() => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => setproducts(data));
-    }, [])
+    /*  use external function for abort code duplicated */
+    const [products, setproducts] = useProducts();
 
     /* shoping cart information store state  */
     const [cart, setCart] = useState([]);
